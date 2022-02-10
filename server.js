@@ -33,6 +33,7 @@
 // server.listen(port, () => console.log(`listening on port ${port}`)); //callback fires when listening starts
 
 const express = require('express');
+const morgan = require('morgan');
 
 const app = express();
 
@@ -57,5 +58,5 @@ app.get('/about', (req, res, next) => {
        `);
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000; //looks for environmental port first
 app.listen(port, () => console.log(`listening on port ${port}`));
